@@ -10,6 +10,7 @@ export const useLogin = () => {
     mutationFn: async (body: { email: string; password: string }) => {
       const { email, password } = body;
       const result = await usersService.login(email, password);
+      console.log(result);
       setUserData(result.data.user);
       setToken(result.data.token);
 

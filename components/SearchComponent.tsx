@@ -63,6 +63,7 @@ export const SearchComponent = ({
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
+              <SelectItem value="DEFAULT">default</SelectItem>
               <SelectItem value="SUBJECT">Subject</SelectItem>
               <SelectItem value="TYPE">Type</SelectItem>
             </SelectGroup>

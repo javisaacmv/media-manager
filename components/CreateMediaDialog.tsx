@@ -183,7 +183,7 @@ export function CreateMediaDialog() {
           {type === "VIDEO" && (
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="videoUrl" className="text-right">
-                Video URL
+                YouTube Video ID
               </Label>
               <Input
                 id="videoUrl"

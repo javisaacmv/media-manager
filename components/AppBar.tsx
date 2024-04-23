@@ -34,6 +34,8 @@ export function AppBar() {
   const user = useAuthStore((state) => state.user);
   const logout = useAuthStore((state) => state.logout);
 
+  console.log(user);
+
   return (
     <Menubar>
       <MenubarMenu>
