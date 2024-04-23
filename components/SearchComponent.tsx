@@ -22,7 +22,7 @@ import {
 
 type Props = {
   orderBy: string;
-  setOrderBy: (val: "SUBJECT" | "TYPE" | "") => void;
+  setOrderBy: (val: "SUBJECT" | "TYPE" | "DEFAULT") => void;
   searchByTitle: string;
   setSearchByTitle: (val: string) => void;
   searchBySubject: string;
@@ -56,7 +56,9 @@ export const SearchComponent = ({
         />
         <Select
           value={orderBy}
-          onValueChange={(value: "SUBJECT" | "TYPE" | "") => setOrderBy(value)}
+          onValueChange={(value: "SUBJECT" | "TYPE" | "DEFAULT") =>
+            setOrderBy(value)
+          }
         >
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Order by" />

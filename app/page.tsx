@@ -26,12 +26,20 @@ export default function Home() {
 
   const getCountByType = () => {
     if (!data) return;
-    let types = {};
-    data.media.forEach((m: { type: string | number }) => {
+    let types = {
+      VIDEO: 0,
+      TEXT: 0,
+      IMAGE: 0,
+    };
+    data.media.forEach((m: { type: keyof typeof types }) => {
       types[m.type] = !types[m.type] ? 1 : types[m.type] + 1;
     });
     setCountByType(types);
   };
+
+  const countByTypeKeys = Object.keys(
+    countByType
+  ) as (keyof typeof countByType)[];
 
   useEffect(() => {
     getCountByType();
@@ -92,7 +100,7 @@ export default function Home() {
         </div>
       </div>
       <footer className="flex flex-row justify-end p-5">
-        {Object.keys(countByType).map((key) => (
+        {countByTypeKeys.map((key) => (
           <p className="mr-3" key={key}>{` ${key}: ${countByType[key]} `}</p>
         ))}
         total items: {data?.media.length}
