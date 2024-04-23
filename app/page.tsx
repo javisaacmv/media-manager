@@ -10,7 +10,9 @@ import React, { useEffect, useState } from "react";
 export default function Home() {
   const [searchByTitle, setSearchByTitle] = React.useState("");
   const [searchBySubject, setSearchBySubject] = React.useState("");
-  const [orderBy, setOrderBy] = React.useState<"SUBJECT" | "TYPE" | "">("");
+  const [orderBy, setOrderBy] = React.useState<"SUBJECT" | "TYPE" | "DEFAULT">(
+    "DEFAULT"
+  );
   const [countByType, setCountByType] = useState({});
 
   const user = useAuthStore((state) => state.user);
